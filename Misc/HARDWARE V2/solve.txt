@@ -1,0 +1,10 @@
+nference:
+
+The board is a TI EZ430U (MSP430 microcontroller) accessed via its BSL.
+The flag format in CTF is "CYBERDUNE{<board_name>}".
+
+Summary:
+
+Travis Goodspeed’s blog explains how to exploit the MSP430 BSL in TI EZ430U devices.
+Using the hint, we infer the board is MSP430 BSL / TI EZ430U, which matches the flag format.
+This approach confirms the correct board ID for the challenge.
