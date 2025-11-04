@@ -1,0 +1,8 @@
+Challenge 1 — HELLO WORLD (JPEG Forensics)
+Summary
+A seemingly ordinary JPEG (hello_world.jpg) contained the flag as plain ASCII inside the binary.
+This is a classic “look for readable strings” forensics task: no fancy stego required — just basic binary inspection.
+
+
+🏁 Final Flag
+CYBERDUNE{m3t4d4t4_1s_3v3rywh3r3}
