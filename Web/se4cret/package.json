@@ -1,0 +1,16 @@
+{
+  "name": "cyberdune-web-challenge-31347",
+  "version": "1.0.0",
+  "description": "CTF web challenge with report-to-admin XSS flow and a headless admin bot. Flag in admin cookie.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.19.2",
+    "node-fetch": "^3.3.2",
+    "puppeteer": "^22.6.5",
+    "uuid": "^9.0.1"
+  }
+}
