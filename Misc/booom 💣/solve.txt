@@ -1,0 +1,48 @@
+🧠 Step 1 — Recognize the cipher
+
+The numbers correspond to letters on a classic phone keypad (multi-tap texting).
+
+---
+
+🔢 Step 2 — Map numbers to letters
+
+2→ABC, 3→DEF, 4→GHI, 5→JKL, 6→MNO, 7→PQRS, 8→TUV, 9→WXYZ
+Underscores "" mark word boundaries.
+
+---
+
+🧩 Step 3 — Decode in Python
+
+mapping = {
+    '2': 'ABC', '3': 'DEF', '4': 'GHI',
+    '5': 'JKL', '6': 'MNO', '7': 'PQRS',
+    '8': 'TUV', '9': 'WXYZ'
+}
+
+cipher = "8444447777_7446666633_444777726622244433668"
+result = []
+
+for group in cipher.split(''):
+    i = 0
+    while i < len(group):
+        n = group[i]
+        count = 1
+        while i + count < len(group) and group[i + count] == n:
+            count += 1
+        letters = mapping[n]
+        letter = letters[(count - 1) % len(letters)]
+        result.append(letter)
+        i += count
+    result.append(' ')
+
+print(''.join(result))
+
+Output:
+
+THIS PHONE IS ANCIENT
+
+---
+
+🏁 Step 4 — Final Flag
+
+CYBERDUNE{THIS_PHONE_IS_ANCIENT}
