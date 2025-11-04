@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  unstable:
+    build: .
+    ports:
+      - "32548:32548"
+    restart: unless-stopped
+
