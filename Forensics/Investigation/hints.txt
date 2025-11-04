@@ -1,0 +1,10 @@
+Hints
+
+Hint 1 — Observation
+Open mystery.enc in a text viewer. Notice the characters — they look like hexadecimal. That’s your first clue.
+
+Hint 2 — Direction
+Try reversing the string. Something interesting happens when you undo what was flipped.
+
+Hint 3 — Common Layers
+CTF-style encodings often chain together hex → base64 → compression. Think step by step — decode, then decompress.

@@ -1,0 +1,5 @@
+Investigation notes:
+- There's something odd about the bytes.
+- Try reversing things.
+- Common layers used in CTf: hex, base64, compression.
+- Flag format: CYBERDUNE{...}
