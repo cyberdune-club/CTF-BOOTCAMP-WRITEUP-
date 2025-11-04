@@ -1,0 +1,29 @@
+🧩 WRITEUP Challenge
+
+You are given this encoded string:
+
+Q1lCRVJEVU5Fe0ZSRUVFRUVFRUVFRUVFRUVFX1BBTEVTVElOIX0=
+
+🎯 Goal
+
+Find the hidden flag.
+
+---
+
+🔍 Step 1 — Identify the encoding
+
+The string ends with "=", uses only letters, numbers, "+", and "/",
+→ this is a Base64 encoded text.
+
+---
+
+🐍 Step 2 — Decode Using Cyber chef tool
+
+from bas64 
+
+
+🏁 Step 4 — Conclusion
+
+The flag is:
+
+"CYBERDUNE{FREEEEEEEEEEEEEEE_PALESTIN!}"
