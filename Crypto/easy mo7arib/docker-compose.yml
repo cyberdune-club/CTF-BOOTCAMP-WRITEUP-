@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  crypto:
+    build: .
+    container_name: cyberdune_crypto
+    ports:
+      - "1337:1337"   # map host 1337 -> container 1337
+    restart: unless-stopped
