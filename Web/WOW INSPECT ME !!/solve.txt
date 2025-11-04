@@ -1,1 +1,0 @@
-to solve challenge just inspect page of challenge in we found flag in sources 
