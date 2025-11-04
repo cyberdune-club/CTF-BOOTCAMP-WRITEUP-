@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CYBERDUNE CLUB — XSS Challenge</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Courier New',monospace;background:#000;color:#fff;overflow-x:hidden;min-height:100vh}
+  
+  /* Matrix Rain Effect */
+  #matrix{position:fixed;inset:0;width:100%;height:100%;z-index:0;mix-blend-mode:screen;opacity:0.7}
+  
+  /* Main Layout */
+  .container{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:20px}
+  
+  /* Header */
+  .header{text-align:center;margin-bottom:40px;padding:30px 0;border-bottom:2px solid #e10600}
+  .logo-img{width:160px;height:auto;margin:0 auto 15px;display:block;filter:drop-shadow(0 0 15px rgba(225,6,0,0.6))}
+  .logo{color:#e10600;font-size:3rem;font-weight:900;text-shadow:0 0 20px rgba(225,6,0,0.8);margin-bottom:10px;letter-spacing:3px}
+  .subtitle{color:#fff;font-size:1.2rem;margin-bottom:5px}
+  .difficulty{background:#e10600;color:#000;padding:5px 15px;border-radius:20px;font-weight:700;display:inline-block;margin-top:10px}
+  
+  /* Challenge Cards */
+  .challenge-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:30px;margin-bottom:40px}
+  .challenge-card{background:rgba(10,10,10,0.85);backdrop-filter:blur(15px);border:1px solid #333;border-radius:15px;padding:25px;box-shadow:0 0 30px rgba(225,6,0,0.3);transition:all 0.3s ease}
+  .challenge-card:hover{border-color:#e10600;box-shadow:0 0 50px rgba(225,6,0,0.5);transform:translateY(-5px)}
+  
+  .card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+  .card-title{color:#e10600;font-size:1.3rem;font-weight:700}
+  .card-level{background:#333;color:#fff;padding:3px 8px;border-radius:10px;font-size:0.8rem}
+  
+  /* User Profile Section */
+  .user-profile{background:rgba(20,20,20,0.9);border:1px solid #444;border-radius:10px;padding:20px;margin-bottom:30px}
+  .profile-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}
+  .username{color:#7fff7f;font-weight:700}
+  .user-role{padding:5px 10px;border-radius:15px;font-size:0.8rem;font-weight:700}
+  .role-user{background:#444;color:#fff}
+  .role-admin{background:#e10600;color:#fff}
+  .user-stats{color:#ccc}
+  
+  /* Input Forms */
+  .input-group{margin-bottom:20px}
+  .input-label{display:block;color:#e10600;font-weight:700;margin-bottom:8px}
+  .input-field{width:100%;background:rgba(0,0,0,0.7);border:2px solid #333;border-radius:8px;padding:12px;color:#fff;font-family:inherit}
+  .input-field:focus{outline:none;border-color:#e10600;box-shadow:0 0 10px rgba(225,6,0,0.3)}
+  
+  .btn{background:#e10600;border:none;padding:12px 25px;border-radius:8px;color:#fff;cursor:pointer;font-weight:700;font-family:inherit;transition:all 0.3s ease}
+  .btn:hover{background:#ff0000;box-shadow:0 0 15px rgba(255,0,0,0.5)}
+  .btn-secondary{background:#333;border:2px solid #666}
+  .btn-secondary:hover{background:#555;border-color:#e10600}
+  
+  /* Results & Flags */
+  .result-box{margin-top:20px;padding:15px;border-radius:8px;min-height:50px}
+  .success{background:rgba(127,255,127,0.1);border:1px solid #7fff7f;color:#7fff7f}
+  .error{background:rgba(255,0,0,0.1);border:1px solid #ff6666;color:#ff6666}
+  .info{background:rgba(100,100,255,0.1);border:1px solid #6666ff;color:#6666ff}
+  
+  .flag{background:rgba(225,6,0,0.1);border:2px solid #e10600;color:#e10600;font-weight:900;text-align:center;font-size:1.1rem;letter-spacing:1px;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1} 50%{opacity:0.7}}
+  
+  /* Admin Panel (Hidden) */
+  .admin-panel{display:none;background:rgba(225,6,0,0.1);border:2px solid #e10600;border-radius:10px;padding:20px;margin-top:30px}
+  .admin-title{color:#e10600;font-size:1.5rem;margin-bottom:15px;text-align:center}
+  .secret-data{background:rgba(0,0,0,0.8);border:1px solid #666;border-radius:5px;padding:15px;color:#7fff7f;font-family:monospace;margin:10px 0}
+  
+  /* Footer */
+  .footer{text-align:center;margin-top:60px;padding:30px 0;border-top:1px solid #333;color:#666}
+  
+  /* Debug Console */
+  .debug-console{display:none;position:fixed;bottom:20px;right:20px;background:rgba(0,0,0,0.9);border:1px solid #e10600;border-radius:10px;padding:15px;color:#7fff7f;font-family:monospace;max-width:300px;z-index:1000}
+  
+  /* Responsive */
+  @media(max-width:768px){
+    .logo{font-size:2rem}
+    .challenge-grid{grid-template-columns:1fr}
+    .container{padding:15px}
+  }
+</style>
+</head>
+<body>
+
+<canvas id="matrix"></canvas>
+
+<div class="container">
+  <!-- Header -->
+  <div class="header">
+    <img src="logo.webp" alt="CYBERDUNE Logo" class="logo-img">
+    <h1 class="logo">CYBERDUNE CLUB</h1>
+    <p class="subtitle">XSS Security Challenge Platform</p>
+    <span class="difficulty">MEDIUM LEVEL</span>
+  </div>
+
+  <!-- User Profile -->
+  <div class="user-profile" id="userProfile">
+    <div class="profile-header">
+      <div>
+        <span class="username" id="currentUser">guest_user</span>
+        <span class="user-role role-user" id="userRole">USER</span>
+      </div>
+      <div class="user-stats">
+        <span>Exploits: <span id="privLevel">0</span>/2</span>
+      </div>
+    </div>
+    <p>Current Session: <span id="sessionInfo">Limited Access</span></p>
+  </div>
+
+  <!-- Challenge Grid -->
+  <div class="challenge-grid">
+    
+    <!-- Challenge 1: Comment System -->
+    <div class="challenge-card">
+      <div class="card-header">
+        <h3 class="card-title">Comment System</h3>
+        <span class="card-level">XSS-1</span>
+      </div>
+      <p style="color:#ccc;margin-bottom:20px">Leave a comment below. The system will display it back to you.</p>
+      
+      <div class="input-group">
+        <label class="input-label">Your Comment:</label>
+        <input type="text" class="input-field" id="commentInput" placeholder="Enter your comment...">
+        <button class="btn" onclick="submitComment()" style="margin-top:10px">Submit Comment</button>
+      </div>
+      
+      <div class="result-box info" id="commentResult">
+        Your comment will appear here...
+      </div>
+    </div>
+
+    <!-- Challenge 2: Search Function -->
+    <div class="challenge-card">
+      <div class="card-header">
+        <h3 class="card-title">Search Portal</h3>
+        <span class="card-level">XSS-2</span>
+      </div>
+      <p style="color:#ccc;margin-bottom:20px">Search through our database. Results will be highlighted.</p>
+      
+      <div class="input-group">
+        <label class="input-label">Search Query:</label>
+        <input type="text" class="input-field" id="searchInput" placeholder="What are you looking for?">
+        <button class="btn" onclick="performSearch()" style="margin-top:10px">Search Database</button>
+      </div>
+      
+      <div class="result-box info" id="searchResult">
+        Search results will be displayed here...
+      </div>
+    </div>
+
+    <!-- Challenge 3: Profile Update -->
+    <div class="challenge-card">
+      <div class="card-header">
+        <h3 class="card-title">Profile Settings</h3>
+        <span class="card-level">XSS-3</span>
+      </div>
+      <p style="color:#ccc;margin-bottom:20px">Update your display name. Changes are reflected immediately.</p>
+      
+      <div class="input-group">
+        <label class="input-label">Display Name:</label>
+        <input type="text" class="input-field" id="nameInput" placeholder="Enter new display name">
+        <button class="btn" onclick="updateProfile()" style="margin-top:10px">Update Profile</button>
+      </div>
+      
+      <div class="result-box info" id="profileResult">
+        Profile updates will show here...
+      </div>
+    </div>
+
+    <!-- Challenge 4: URL Preview -->
+    <div class="challenge-card">
+      <div class="card-header">
+        <h3 class="card-title">URL Preview</h3>
+        <span class="card-level">XSS-4</span>
+      </div>
+      <p style="color:#ccc;margin-bottom:20px">Preview any URL. The system will show you the link details.</p>
+      
+      <div class="input-group">
+        <label class="input-label">URL to Preview:</label>
+        <input type="text" class="input-field" id="urlInput" placeholder="https://example.com">
+        <button class="btn" onclick="previewURL()" style="margin-top:10px">Generate Preview</button>
+      </div>
+      
+      <div class="result-box info" id="urlResult">
+        URL preview will be generated here...
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Panel (Hidden by default) -->
+  <div class="admin-panel" id="adminPanel">
+    <h2 class="admin-title">🔒 ADMIN CONTROL PANEL</h2>
+    <div class="secret-data">
+      <strong>CLASSIFIED DATA:</strong><br>
+      Admin Token: <span id="adminToken">ADM_7K9P_X3R8_M2N1</span><br>
+      Secret Key: <span id="secretKey">CYBER_DUNE_2024_FLAG</span><br>
+      Database Password: <span id="dbPass">r00t_4cc3ss_k3y</span>
+    </div>
+    <div class="result-box flag" id="finalFlag" style="display:none">
+      🏆 <span id="flagText">Loading...</span> 🏆
+    </div>
+  </div>
+
+  <!-- Debug Console -->
+  <div class="debug-console" id="debugConsole">
+    <div style="color:#e10600;font-weight:bold;margin-bottom:10px;">🔍 DEBUG MODE</div>
+    <div style="font-size:12px;line-height:1.4;">
+      Try these payloads:<br>
+      • &lt;img src=x onerror=exploit()&gt;<br>
+      • &lt;svg onload=exploit()&gt;<br>
+      • &lt;script&gt;exploit()&lt;/script&gt;<br>
+      • javascript:exploit()
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>CYBERDUNE XSS Challenge © 2024 | Test your skills responsibly</p>
+    <p style="font-size:0.8rem;margin-top:10px">Find the vulnerabilities, escalate privileges, capture the flag!</p>
+  </div>
+</div>
+
+<script>
+// Matrix Rain Effect - Enhanced
+const canvas = document.getElementById('matrix');
+const ctx = canvas.getContext('2d');
+let W, H, cols, ypos = [];
+const chars = '01ᴄʏʙᴇʀᴅᴜɴᴇ▓▒░█!@#$%^&*(){}[]<>?/|\\~`ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+const matrixColor = '#e10600';
+
+function initMatrix() {
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+  cols = Math.floor(W / 10) + 1;
+  ypos = Array(cols).fill(0);
+}
+
+function drawMatrix() {
+  ctx.fillStyle = 'rgba(0,0,0,0.05)';
+  ctx.fillRect(0, 0, W, H);
+  
+  for (let i = 0; i < cols; i++) {
+    const ch = chars.charAt(Math.floor(Math.random() * chars.length));
+    const opacity = Math.random() * 0.8 + 0.2;
+    ctx.fillStyle = `rgba(225,6,0,${opacity})`;
+    ctx.font = Math.random() > 0.8 ? 'bold 12px Courier New' : '10px Courier New';
+    
+    ctx.fillText(ch, i * 10, ypos[i] * 12);
+    ypos[i] = (ypos[i] * 12 > H && Math.random() > 0.975) ? 0 : ypos[i] + 1;
+  }
+  requestAnimationFrame(drawMatrix);
+}
+
+window.addEventListener('resize', initMatrix);
+initMatrix();
+drawMatrix();
+
+// Challenge Variables
+let userPrivLevel = 0;
+let adminAccess = false;
+let exploitCount = 0;
+
+// Obfuscated flag parts (split and encoded)
+const _p1 = [67, 89, 66, 69, 82, 68, 85, 78, 69];
+const _p2 = [68, 48, 77, 95, 88, 83, 83, 95];  
+const _p3 = [80, 87, 78, 51, 68, 95, 72, 52, 67, 75, 51, 82, 95];
+const _p4 = [50, 48, 50, 52];
+
+// Dynamic flag generation (only when needed)
+function getFlag() {
+  const parts = [_p1, _p2, _p3, _p4];
+  return parts.map(p => String.fromCharCode(...p)).join('');
+}
+
+// Global exploit function - This is the key!
+window.exploit = function() {
+  exploitCount++;
+  userPrivLevel++;
+  
+  console.log('🚨 XSS EXPLOIT DETECTED!');
+  console.log(`Exploit #${exploitCount} executed successfully`);
+  
+  document.getElementById('privLevel').textContent = userPrivLevel;
+  
+  // Visual feedback
+  document.body.style.borderTop = '3px solid #e10600';
+  setTimeout(() => {
+    document.body.style.borderTop = '';
+  }, 1000);
+  
+  // Check for admin access
+  if (userPrivLevel >= 2 && !adminAccess) {
+    setTimeout(() => {
+      grantAdminAccess();
+    }, 800);
+  }
+  
+  return 'XSS_SUCCESS';
+}
+
+// Alternative trigger function
+window.pwn = window.exploit;
+window.hack = window.exploit;
+window.xss = window.exploit;
+
+// Grant Admin Access
+function grantAdminAccess() {
+  adminAccess = true;
+  
+  // Update UI with animation
+  const userRole = document.getElementById('userRole');
+  const sessionInfo = document.getElementById('sessionInfo');
+  const currentUser = document.getElementById('currentUser');
+  
+  userRole.className = 'user-role role-admin';
+  userRole.textContent = 'ADMIN';
+  sessionInfo.textContent = 'Full System Access Granted';
+  currentUser.textContent = 'admin_user';
+  
+  // Flash effect
+  userRole.style.animation = 'pulse 0.5s ease-in-out 3';
+  
+  // Show admin panel with delay
+  setTimeout(() => {
+    const adminPanel = document.getElementById('adminPanel');
+    adminPanel.style.display = 'block';
+    adminPanel.scrollIntoView({behavior: 'smooth'});
+    
+    // Show flag immediately
+    setTimeout(() => {
+      const flagEl = document.getElementById('finalFlag');
+      const flagText = document.getElementById('flagText');
+      
+      // Generate flag dynamically
+      const flag = 'CYBERDUNE{' + getFlag() + '}';
+      flagText.textContent = flag;
+      
+      flagEl.style.display = 'block';
+      flagEl.style.animation = 'pulse 1s ease-in-out infinite';
+      
+      // Victory message
+      console.log('🏆 CONGRATULATIONS! FLAG CAPTURED!');
+      console.log('Flag:', flag);
+      
+      // Alert for confirmation
+      setTimeout(() => {
+        alert('🎉 FLAG CAPTURED! 🎉\n' + flag);
+      }, 500);
+      
+    }, 800);
+  }, 1000);
+}
+
+// Challenge 1: Comment System (Reflected XSS)
+function submitComment() {
+  const comment = document.getElementById('commentInput').value;
+  const resultDiv = document.getElementById('commentResult');
+  
+  if (!comment.trim()) {
+    resultDiv.className = 'result-box error';
+    resultDiv.innerHTML = 'Please enter a comment!';
+    return;
+  }
+  
+  // VULNERABLE: Direct insertion without sanitization
+  resultDiv.className = 'result-box success';
+  resultDiv.innerHTML = `<strong>Your comment:</strong><br>${comment}`;
+  
+  console.log('Comment processed:', comment);
+}
+
+// Challenge 2: Search Function (DOM XSS)
+function performSearch() {
+  const query = document.getElementById('searchInput').value;
+  const resultDiv = document.getElementById('searchResult');
+  
+  if (!query.trim()) {
+    resultDiv.className = 'result-box error';
+    resultDiv.innerHTML = 'Search query cannot be empty!';
+    return;
+  }
+  
+  // VULNERABLE: Using innerHTML with user data
+  resultDiv.className = 'result-box success';
+  resultDiv.innerHTML = `
+    <strong>Search Results for:</strong> ${query}<br>
+    <em>Found 3 results matching your query...</em><br>
+    • Database entry #1: Contains "${query}"<br>
+    • Database entry #2: Related to "${query}"<br>
+    • Database entry #3: References "${query}"
+  `;
+  
+  console.log('Search performed:', query);
+}
+
+// Challenge 3: Profile Update (Stored-like XSS)
+function updateProfile() {
+  const newName = document.getElementById('nameInput').value;
+  const resultDiv = document.getElementById('profileResult');
+  const userSpan = document.getElementById('currentUser');
+  
+  if (!newName.trim()) {
+    resultDiv.className = 'result-box error';
+    resultDiv.innerHTML = 'Display name cannot be empty!';
+    return;
+  }
+  
+  // VULNERABLE: Direct assignment to innerHTML
+  userSpan.innerHTML = newName;
+  resultDiv.className = 'result-box success';
+  resultDiv.innerHTML = `Profile updated! Welcome, ${newName}`;
+  
+  console.log('Profile updated:', newName);
+}
+
+// Challenge 4: URL Preview (Advanced XSS)
+function previewURL() {
+  const url = document.getElementById('urlInput').value;
+  const resultDiv = document.getElementById('urlResult');
+  
+  if (!url.trim()) {
+    resultDiv.className = 'result-box error';
+    resultDiv.innerHTML = 'Please enter a URL!';
+    return;
+  }
+  
+  // VULNERABLE: Creating clickable links with user input
+  resultDiv.className = 'result-box success';
+  resultDiv.innerHTML = `
+    <strong>URL Preview Generated:</strong><br>
+    <div style="border:1px solid #333;padding:10px;margin:10px 0;border-radius:5px;">
+      <strong>Link:</strong> <a href="${url}" target="_blank" style="color:#e10600;">${url}</a><br>
+      <strong>Status:</strong> <span style="color:#7fff7f;">Active</span><br>
+      <strong>Preview:</strong> Click to visit ${url}
+    </div>
+  `;
+  
+  console.log('URL preview generated:', url);
+}
+
+// Debug Mode Toggle
+document.addEventListener('keydown', (e) => {
+  if (e.ctrlKey && e.shiftKey && e.key === 'X') {
+    const debugConsole = document.getElementById('debugConsole');
+    debugConsole.style.display = debugConsole.style.display === 'none' ? 'block' : 'none';
+    
+    console.log('%cCYBERDUNE DEBUG MODE ACTIVATED', 'color:#e10600;font-size:20px;font-weight:bold;');
+    console.log('🎯 Target: Execute exploit() function');
+    console.log('💡 Hint: Try XSS payloads that call exploit()');
+  }
+});
+
+// Initialize page
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('%cCYBERDUNE XSS Challenge Loaded', 'color:#e10600;font-size:16px;font-weight:bold;');
+  console.log('🎯 Mission: Find XSS vulnerabilities and escalate to admin privileges!');
+  console.log('💡 Tip: Look for ways to execute JavaScript code...');
+  
+  // Easter egg in console
+  setTimeout(() => {
+    console.log('%c🔍 Psst... try calling exploit() function somehow...', 'color:#7fff7f;font-style:italic;');
+  }, 3000);
+});
+</script>
+
+</body>
+</html>
