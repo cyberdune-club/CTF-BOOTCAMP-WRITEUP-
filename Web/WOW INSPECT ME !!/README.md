@@ -1,4 +1,4 @@
-# CYBERDUNE — Inspect Me (Static Web Challenge)
+# CYBERDUNE — WOW INSPECT Me!! (Static Web Challenge)
 
 A static, Netlify-friendly web challenge inspired by classic "Inspect" tasks.
 The flag is split across **three places**:
