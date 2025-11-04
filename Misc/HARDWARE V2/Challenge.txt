@@ -1,0 +1,7 @@
+Challenge: Identify the board format used in the CTF flag, given hints about repurposing and BSL.
+
+Hint Analysis:
+
+Hint link: "Travis Goodspeed — Cracking and Repurposing" (https://travisgoodspeed.blogspot.com/2008/11/speaking-at-25c3.html?m=1)
+This blog discusses repurposing the TI EZ430U series (MSP430-based USB dongles / Chronos watches).
+Focus is on using the MSP430’s BSL (Bootstrap Loader) to interact with the device.
