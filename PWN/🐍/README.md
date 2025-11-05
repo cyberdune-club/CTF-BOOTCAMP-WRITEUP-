@@ -2,7 +2,7 @@ CYBERDUNE - 🐍
 ==================
 
 Name: CYBERDUNE (heap0)
-Author: Abrxs, pr1or1tyQ (modified)
+Author: marlithor_cyber
 
 Description:
 ------------
