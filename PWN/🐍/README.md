@@ -43,9 +43,8 @@ The supplied exploit `solve.py` defaults to this host/port. Example:
 
     python3 solve.py --host 159.223.23.56 --port 31340
 
-Files included:
 - chall.c         (modified source)
 - flag.txt        (placeholder)
 - solve.py        (exploit script)
 - Makefile        (build command)
-- README.txt
+Files included:
