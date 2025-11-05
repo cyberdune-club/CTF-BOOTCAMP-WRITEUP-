@@ -98,25 +98,25 @@ Challenges are distributed across the following categories:
 
 ### 🌐 Web Exploitation (8 Challenges)
 
-- [ ] [EASY GAME](./Web/challenge1.md) - **Points:** 487 | **Difficulty:** ⭐
-- [ ] [WOW INSPECT ME !!](./Web/challenge2.md) - **Points:** 487 | **Difficulty:** ⭐⭐
-- [ ] [se4cret](./Web/challenge3.md) - **Points:** 494 | **Difficulty:** ⭐⭐
-- [ ] [khabza m3amra 🥪](./Web/challenge4.md) - **Points:** 494 | **Difficulty:** ⭐⭐⭐
-- [ ] [CYBERDUNE XSS HINTER](./Web/challenge5.md) - **Points:** 495 | **Difficulty:** ⭐⭐⭐
-- [ ] [Puzzle](./Web/challenge6.md) - **Points:** 495 | **Difficulty:** ⭐⭐⭐
-- [ ] [OhMyQl](./Web/challenge7.md) - **Points:** 498 | **Difficulty:** ⭐⭐⭐⭐
-- [ ] [baanka](./Web/challenge8.md) - **Points:** 498 | **Difficulty:** ⭐⭐⭐⭐
+- [ ] [EASY GAME](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Web/EASY%20GAME) - **Points:** 487 | **Difficulty:** ⭐
+- [ ] [WOW INSPECT ME !!](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Web/WOW%20INSPECT%20ME%20!!) - **Points:** 487 | **Difficulty:** ⭐⭐
+- [ ] [se4cret](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Web/se4cret) - **Points:** 494 | **Difficulty:** ⭐⭐
+- [ ] [khabza m3amra 🥪](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Web/khabza%20m3amra%20%F0%9F%A5%AA) - **Points:** 494 | **Difficulty:** ⭐⭐⭐
+- [ ] [CYBERDUNE XSS HINTER](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Web/CYBERDUNE%20XSS%20HUNTER) - **Points:** 495 | **Difficulty:** ⭐⭐⭐
+- [ ] [Puzzle](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Web/Puzzle) - **Points:** 495 | **Difficulty:** ⭐⭐⭐
+- [ ] [OhMyQl](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Web/OhMyQl) - **Points:** 498 | **Difficulty:** ⭐⭐⭐⭐
+- [ ] [baanka](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Web/baanka) - **Points:** 498 | **Difficulty:** ⭐⭐⭐⭐
 
 ### 🔍 Digital Forensics (8 Challenges)
 
-- [ ] [hello_world](./Forensics/challenge1.md) - **Points:** 489 | **Difficulty:** ⭐
-- [ ] [chad QR chad chad !!](./Forensics/challenge2.md) - **Points:** 490 | **Difficulty:** ⭐⭐
-- [ ] [Police Man](./Forensics/challenge3.md) - **Points:** 492 | **Difficulty:** ⭐⭐
-- [ ] [Noise & Keys](./Forensics/challenge4.md) - **Points:** 494 | **Difficulty:** ⭐⭐⭐
-- [ ] [Batata](./Forensics/challenge5.md) - **Points:** 494 | **Difficulty:** ⭐⭐⭐
-- [ ] [Investigation](./Forensics/challenge6.md) - **Points:** 498 | **Difficulty:** ⭐⭐⭐
-- [ ] [memory game](./Forensics/challenge7.md) - **Points:** 498 | **Difficulty:** ⭐⭐⭐⭐
-- [ ] [waaas3iib](./Forensics/challenge8.md) - **Points:** 499 | **Difficulty:** ⭐⭐⭐⭐
+- [ ] [hello_world](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Forensics/hello%20world) - **Points:** 489 | **Difficulty:** ⭐
+- [ ] [chad QR chad chad !!](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Forensics/Chad%20QR%20Chad%20Chad%20!!) - **Points:** 490 | **Difficulty:** ⭐⭐
+- [ ] [Police Man](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Forensics/Police%20man) - **Points:** 492 | **Difficulty:** ⭐⭐
+- [ ] [Noise & Keys](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Forensics/Noise%20%26%20Keys) - **Points:** 494 | **Difficulty:** ⭐⭐⭐
+- [ ] [Batata](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Forensics/BATATA) - **Points:** 494 | **Difficulty:** ⭐⭐⭐
+- [ ] [Investigation](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Forensics/Investigation) - **Points:** 498 | **Difficulty:** ⭐⭐⭐
+- [ ] [memory game](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Forensics/memory%20game) - **Points:** 498 | **Difficulty:** ⭐⭐⭐⭐
+- [ ] [waaas3iib](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Forensics/waaas3iib) - **Points:** 499 | **Difficulty:** ⭐⭐⭐⭐
 
 ### 🔎 OSINT (5 Challenges)
 
