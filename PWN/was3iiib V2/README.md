@@ -1,30 +1,30 @@
-# mmaped memory manufactures meticulous menaces
+# CYBERDUNE Challenge - mmaped memory manufactures meticulous menaces
 
-## Story
-A hyperactive HFT (high-frequency trading) engine streams packets over a custom protocol. It never frees, but trusts input blindly. Can you turn frequency into fragility?
+## Build Instructions
+```bash
+docker build -t cyberdune_hft .
+docker run --rm -p 31344:31344 cyberdune_hft
+```
 
-## Files Provided
-- Binary: hft
-- Source: main.c
+## Files to distribute to players:
+- hft (compiled binary)
+- main.c
+- description.md
+- hints.md
 
-## Target
-- Remote host listens on TCP port 31344
-- Instance lifetime: 180 seconds
+## Testing
+```bash
+# Connect locally
+nc 127.0.0.1 31344
 
-## Protocol
-- Server prints "PKT_RES" before each request
-- Client sends 8-byte little-endian size (size_t) 
-- Server allocates malloc(sz), writes pkt->sz, then reads payload via gets(&pkt->data)
-- The first qword of pkt->data is the option
-  - 0 = PING => PKT_DATA:[PONG_OK]
-  - 1 = ECHO => PKT_DATA:[echoed string at &pkt->data[1]]
-  - otherwise => PKT_INFO:[E_INVAL]
+# Run solve script
+python3 solve.py
+```
 
-## Goal
-Get a shell and read /flag.txt
-
-## Flag format
-CYBERDUNE{w_aaaaaaaa_S3I_bb00_BRAVO_3LIK_ILA_SOLVITIH_CH00}
-
-## Difficulty & Audience
-Intermediate heap exploitation, inspired by "high frequency troubles"
+## Challenge Summary
+- Heap exploitation via gets() overflow
+- No free() calls available
+- Top chunk manipulation for leaks
+- mmap chunks near TLS
+- Target: RCE via modern techniques (setcontext+32)
+- Auto-timeout: 180 seconds
