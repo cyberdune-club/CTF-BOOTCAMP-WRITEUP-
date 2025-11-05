@@ -1,0 +1,20 @@
+Organizer Notes / Solve Sketch — Obelisque
+
+- Anti-debug: ptrace(TRACEME) + /proc/self/status TracerPid. Patch to NOP or force return 0.
+- Input format gate: "CYBERDUNE{" ... "}"
+- Core check: vm_mix() computes two 64-bit values h0,h1 from the entire input using AES-like sbox, rotations, and a murmur-style fmix. Final condition:
+    (h0 ^ h1) == expected
+- expected is stored as obf_expected ^ 0xA5.. key; keys k0/k1 also obfuscated likewise.
+- Recover expected by XORing obf_expected with 0xA5A5A5A5A5A5A5A5.
+
+Reference flag used to generate expected:
+    CYBERDUNE{VM_REV_HARDCORE_0xA5}
+
+Verification:
+    echo -n 'CYBERDUNE{VM_REV_HARDCORE_0xA5}' | ./obelisque
+
+Suggested reversing route:
+    1) Neutralize anti-debug.
+    2) Extract sbox and vm_mix; reimplement in Python.
+    3) Since vm_mix is deterministic and robustly mixing, brute-forcing is not feasible; instead, note we already know format and can search by guided constraint (not needed here for organizers).
+    4) Alternatively, read constants obf_expected/k0/k1, undo XOR 0xA5.. and compute vm_mix(flag) to check.
