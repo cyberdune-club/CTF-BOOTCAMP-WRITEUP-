@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![CyberDune Banner](https://raw.githubusercontent.com/cyberdune/assets/main/banner.png)
+![CyberDune Banner](https://raw.githubusercontent.com/cyberdune/assets/main/logo.png)
 
 [![CTFtime](https://img.shields.io/badge/CTFtime-Team%20Profile-orange?style=for-the-badge&logo=hackthebox)](https://ctftime.org/team/409835)
 [![Website](https://img.shields.io/badge/Website-cyberdune.tech-blue?style=for-the-badge&logo=firefox)](https://www.cyberdune.tech)
