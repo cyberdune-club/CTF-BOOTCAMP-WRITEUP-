@@ -35,7 +35,7 @@ CYBERDUNE(Author_Affiliation_ProjectYear)
 
 ```
 
-# FORMAT FLAG:
+# EXAMPLE :
 ```
 
 CYBERDUNE(Shadow_Byte_al7allb_2100)
@@ -47,12 +47,7 @@ CYBERDUNE(Shadow_Byte_al7allb_2100)
 - Underscores `_` separate each part  
 
 ---
-
-## 💡 Hints
-
-- Explore the **commit history** carefully — not just the latest commits.  
-- Look for **hidden messages**, **base64 strings**, or **unusual metadata** in commit authorship or messages.  
-- “John Dee” might be more than a name — it could be a historical or symbolic clue.  
+ 
 
 ---
 
