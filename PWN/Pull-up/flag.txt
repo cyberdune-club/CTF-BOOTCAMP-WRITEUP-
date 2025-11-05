@@ -1,0 +1,1 @@
+CYBERDUNE{push_pop_to_hero}
