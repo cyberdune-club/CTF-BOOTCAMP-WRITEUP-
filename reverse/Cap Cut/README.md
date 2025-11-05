@@ -1,4 +1,4 @@
-CYBERDUNE CTF — Mobile Forensics / APK Analysis (Easy-Medium)
+CYBERDUNE CTF — APK Analysis (Easy-Medium)
 
 SITUATION :
 3andek file smitou fake_app.apk (modded). Smitou kayban b7al CapCut Pro, bsah had نسخة فيها chi 7wayej مخفية.
