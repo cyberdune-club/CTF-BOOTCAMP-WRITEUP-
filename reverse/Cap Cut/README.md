@@ -15,4 +15,4 @@ Requirements:
 Objective:
 - L-flag = CYBERDUNE{..........}  (hidden encoded inside the apk)
 
-Scoring: Easy-Medium (100 pts)
+Scoring: Easy-Medium (495 pts)
