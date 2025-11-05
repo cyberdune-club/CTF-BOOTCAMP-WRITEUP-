@@ -1,0 +1,6 @@
+Hints:
+1) APK files are ZIP archives. Rename .apk -> .zip or open with unzip tool.
+2) Look under the assets/ directory.
+3) Some strings may be Base64-encoded. Try base64 decoding suspicious-looking lines.
+4) Tools: unzip, strings, grep, base64 -d, jadx (optional), apktool (not required here).
+5) The flag follows the format CYBERDUNE{...} and is ASCII-printable.
