@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  guessing-game-pwn:
+    build: .
+    ports:
+      - "1337:1337"
+    restart: unless-stopped
+    container_name: guessing-game-instance
+    ulimits:
+      nofile: 1024
+    security_opt:
+      - no-new-privileges:true
+    read_only: false
+    tmpfs:
+      - /tmp
+    environment:
+      - TIMEOUT=180
