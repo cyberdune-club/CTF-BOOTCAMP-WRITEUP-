@@ -120,147 +120,49 @@ Challenges are distributed across the following categories:
 
 ### 🔎 OSINT (5 Challenges)
 
-- [ ] [PARIS](./OSINT/challenge1.md) - **Points:** 493 | **Difficulty:** ⭐
-- [ ] [ancient house](./OSINT/challenge2.md) - **Points:** 494 | **Difficulty:** ⭐⭐
-- [ ] [buck buck](./OSINT/challenge3.md) - **Points:** 495 | **Difficulty:** ⭐⭐
-- [ ] [John Doe](./OSINT/challenge4.md) - **Points:** 496 | **Difficulty:** ⭐⭐⭐
-- [ ] [GAME PLAYE](./OSINT/challenge6.md) - **Points:** 498 | **Difficulty:** ⭐⭐⭐⭐
+- [ ] [PARIS](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/OSINT/PARIS) - **Points:** 493 | **Difficulty:** ⭐
+- [ ] [ancient house](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/OSINT/ancient%20house) - **Points:** 494 | **Difficulty:** ⭐⭐
+- [ ] [buck buck](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/OSINT/buck%20buck) - **Points:** 495 | **Difficulty:** ⭐⭐
+- [ ] [John Doe](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/OSINT/John%20doe) - **Points:** 496 | **Difficulty:** ⭐⭐⭐
+- [ ] [GAME PLAYE](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/OSINT/GAME%20PLAY) - **Points:** 498 | **Difficulty:** ⭐⭐⭐⭐
 
 ### 🔐 Cryptography (6 Challenges)
 
-- [ ] [cadeau hada mn 3and marlithor_cyber](./Crypto/challenge1.md) - **Points:** 489 | **Difficulty:** ⭐
-- [ ] [fatboy](./Crypto/challenge2.md) - **Points:** 493 | **Difficulty:** ⭐⭐
-- [ ] [easy mo7arib](./Crypto/challenge3.md) - **Points:** 496 | **Difficulty:** ⭐⭐
-- [ ] [Unstable !!!](./Crypto/challenge4.md) - **Points:** 499 | **Difficulty:** ⭐⭐⭐
-- [ ] [Fl1pper Zer0](./Crypto/challenge5.md) - **Points:** 499 | **Difficulty:** ⭐⭐⭐
-- [ ] [Ternary Knapsack](./Crypto/challenge6.md) - **Points:** 500 | **Difficulty:** ⭐⭐⭐⭐
+- [ ] [cadeau hada mn 3and marlithor_cyber](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Crypto/cadeau%20mn%203and%20marlithor_cyber) - **Points:** 489 | **Difficulty:** ⭐
+- [ ] [fatboy](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Crypto/fatboy) - **Points:** 493 | **Difficulty:** ⭐⭐
+- [ ] [easy mo7arib](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Crypto/easy%20mo7arib) - **Points:** 496 | **Difficulty:** ⭐⭐
+- [ ] [Unstable !!!](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Crypto/Unstable!!!) - **Points:** 499 | **Difficulty:** ⭐⭐⭐
+- [ ] [Fl1pper Zer0](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Crypto/Fl1pper%20Zer0) - **Points:** 499 | **Difficulty:** ⭐⭐⭐
+- [ ] [Ternary Knapsack](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Crypto/Ternary%20Knapsack) - **Points:** 500 | **Difficulty:** ⭐⭐⭐⭐
 
 ### 🔁 Reverse Engineering (6 Challenges)
 
-- [ ] [Cap Cut](./Reverse/challenge1.md) - **Points:** 495 | **Difficulty:** ⭐
-- [ ] [warp](./Reverse/challenge2.md) - **Points:** 497 | **Difficulty:** ⭐⭐
-- [ ] [Compiled](./Reverse/challenge3.md) - **Points:** 497 | **Difficulty:** ⭐⭐
-- [ ] [lost](./Reverse/challenge4.md) - **Points:** 499 | **Difficulty:** ⭐⭐⭐
-- [ ] [Mouse Fromage 🧀](./Reverse/challenge5.md) - **Points:** 499 | **Difficulty:** ⭐⭐⭐
-- [ ] [🦀](./Reverse/challenge6.md) - **Points:** 500 | **Difficulty:** ⭐⭐⭐⭐
+- [ ] [Cap Cut](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/reverse/Cap%20Cut) - **Points:** 495 | **Difficulty:** ⭐
+- [ ] [warp](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/reverse/warp) - **Points:** 497 | **Difficulty:** ⭐⭐
+- [ ] [Compiled](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/reverse/compiled) - **Points:** 497 | **Difficulty:** ⭐⭐
+- [ ] [lost](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/reverse/lost) - **Points:** 499 | **Difficulty:** ⭐⭐⭐
+- [ ] [Mouse Fromage 🧀](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/reverse/Mouse%20Fromage%20%F0%9F%A7%80) - **Points:** 499 | **Difficulty:** ⭐⭐⭐
+- [ ] [🦀](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/reverse/cancer%20%20%E2%99%8B) - **Points:** 500 | **Difficulty:** ⭐⭐⭐⭐
 
 ### 💻 Binary Exploitation (4 Challenges)
 
-- [ ] [guessing game](./PWN/challenge1.md) - **Points:** 493 | **Difficulty:** ⭐⭐
-- [ ] [Pull-up](./PWN/challenge2.md) - **Points:** 499 | **Difficulty:** ⭐⭐⭐
-- [ ] [🐍](./PWN/challenge3.md) - **Points:** 500 | **Difficulty:** ⭐⭐⭐⭐
-- [ ] [was3iiib](./PWN/challenge4.md) - **Points:** was3iiib | **Difficulty:** ⭐⭐⭐⭐⭐
+- [ ] [guessing game](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/PWN/guessing%20game) - **Points:** 493 | **Difficulty:** ⭐⭐
+- [ ] [Pull-up](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/PWN/Pull-up) - **Points:** 499 | **Difficulty:** ⭐⭐⭐
+- [ ] [🐍](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/PWN/%F0%9F%90%8D) - **Points:** 500 | **Difficulty:** ⭐⭐⭐⭐
+- [ ] [was3iiib](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/PWN/was3iiib%20V2) - **Points:** was3iiib | **Difficulty:** ⭐⭐⭐⭐⭐
 
-### 🎭 Miscellaneous (3 Challenges)
+### 🎭 Miscellaneous (4 Challenges)
 
-- [ ] [booom 💣](./Misc/challenge1.md) - **Points:** 493 | **Difficulty:** ⭐
-- [ ] [Hacker](./Misc/challenge2.md) - **Points:** 499 | **Difficulty:** ⭐⭐
-- [ ] [HARDWARE V2](./Misc/challenge3.md) - **Points:** 499 | **Difficulty:** ⭐⭐⭐
+- [ ] [Free Palestine! (9du b ICE wla atay](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Misc/Free%20Palestine!%20(9du%20b%20ICE%20wla%20atay%20)) - **Points:** 189 | **Difficulty:** ⭐
+- [ ] [booom 💣](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Misc/booom%20%F0%9F%92%A3) - **Points:** 493 | **Difficulty:** ⭐⭐
+- [ ] [Hacker](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Misc/Hacker) - **Points:** 499 | **Difficulty:** ⭐⭐⭐
+- [ ] [HARDWARE V2](https://github.com/cyberdune-club/CTF-BOOTCAMP-WRITEUP-/tree/main/Misc/HARDWARE%20V2) - **Points:** 499 | **Difficulty:** ⭐⭐⭐⭐
 
 ### 🎁 Bonus Challenges (2 Challenges)
 
-- [ ] [welcome to CTF](./Bonus/bonus1.md) - **Points:** 100 | **Difficulty:** ⭐⭐⭐⭐
-- [ ] [READ RULES](./Bonus/bonus2.md) - **Points:** 100 | **Difficulty:** ⭐⭐⭐⭐⭐
-
+- [ ] [welcome to CTF] - **Points:** 100 | **Difficulty:** ⭐
+- [ ] [READ RULES] - **Points:** 100 | **Difficulty:** 
 ---
-
-## 📁 Repository Structure
-
-```
-CTF-BOOTCAMP-WRITEUP/
-│
-├── Web/
-│   ├── challenge1.md
-│   ├── challenge2.md
-│   └── files/
-│       ├── challenge1/
-│       └── challenge2/
-│
-├── Forensics/
-│   ├── challenge1.md
-│   └── files/
-│
-├── OSINT/
-│   ├── challenge1.md
-│   └── files/
-│
-├── Crypto/
-│   ├── challenge1.md
-│   └── files/
-│
-├── Reverse/
-│   ├── challenge1.md
-│   └── files/
-│
-├── PWN/
-│   ├── challenge1.md
-│   └── files/
-│
-├── Misc/
-│   ├── challenge1.md
-│   └── files/
-│
-├── Bonus/
-│   ├── bonus1.md
-│   └── files/
-│
-├── assets/
-│   └── images/
-│
-└── README.md
-```
-
----
-
-## 📝 Writeup Template
-
-Each writeup follows a standardized format to ensure consistency and clarity:
-
-```markdown
-# [Challenge Name]
-
-## Challenge Information
-- **Category:** [Web/Crypto/Forensics/etc]
-- **Points:** [XX]
-- **Difficulty:** [⭐⭐⭐]
-- **Author:** [Challenge Author]
-- **Solves:** [Number of solves]
-
-## Description
-[Challenge description provided during the CTF]
-
-## Attachments
-- [file1.zip](./files/challenge_name/file1.zip)
-- [file2.txt](./files/challenge_name/file2.txt)
-
-## Solution
-
-### Initial Analysis
-[First observations and reconnaissance steps]
-
-### Vulnerability Discovery
-[How the vulnerability was identified]
-
-### Exploitation
-[Step-by-step exploitation process with commands/code]
-
-### Flag Capture
-```
-CYBERDUNE{example_flag_here}
-```
-
-## Tools Used
-- Tool 1 - Purpose
-- Tool 2 - Purpose
-- Tool 3 - Purpose
-
-## Key Takeaways
-[Important lessons and techniques learned from this challenge]
-
-## References
-- [Reference 1](https://example.com)
-- [Reference 2](https://example.com)
-```
 
 ---
 
@@ -305,76 +207,7 @@ We welcome contributions from the community! If you participated in CTF Bootcamp
 
 </div>
 
----
 
-## 🛠️ Common Tools & Resources
-
-### Essential Tools by Category
-
-**Web Exploitation**
-- Burp Suite / OWASP ZAP
-- SQLMap
-- Nikto / DirBuster
-- Browser Developer Tools
-
-**Forensics**
-- Autopsy / FTK Imager
-- Wireshark / tcpdump
-- Volatility (Memory Analysis)
-- Binwalk / Foremost
-- Steghide / Stegsolve
-
-**OSINT**
-- Maltego
-- theHarvester
-- Sherlock
-- Google Dorking
-- Social Media Investigation Tools
-
-**Cryptography**
-- CyberChef
-- John the Ripper
-- Hashcat
-- RsaCtfTool
-- dcode.fr
-
-**Reverse Engineering**
-- IDA Pro / Ghidra
-- x64dbg / GDB
-- Radare2
-- dnSpy (.NET)
-- APKTool (Android)
-
-**Binary Exploitation**
-- pwntools
-- ROPgadget
-- checksec
-- GDB with PEDA/GEF
-- One_gadget
-
-**Miscellaneous**
-- Python scripting
-- CyberChef
-- Online sandboxes
-- Hex editors
-
----
-
-## 📚 Learning Resources
-
-### For Beginners
-- [PicoCTF](https://picoctf.org/) - Beginner-friendly CTF platform
-- [OverTheWire](https://overthewire.org/) - War games for learning security
-- [HackTheBox Academy](https://academy.hackthebox.com/) - Structured learning paths
-- [TryHackMe](https://tryhackme.com/) - Guided cybersecurity training
-
-### Advanced Resources
-- [CTFtime](https://ctftime.org/) - CTF events and team rankings
-- [CTF101](https://ctf101.org/) - CTF guide and resources
-- [LiveOverflow YouTube](https://www.youtube.com/c/LiveOverflow) - Security tutorials
-- [IppSec YouTube](https://www.youtube.com/c/ippsec) - HTB walkthroughs
-
----
 
 ## 🔗 Connect With CyberDune
 
